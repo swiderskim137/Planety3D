@@ -47,13 +47,46 @@ namespace Planety3D
         public int maxpxG;
         public int minpxG;
         public int[,] tabpx;
-        public void BitmapMaxMin(Bitmap bitmap)
+
+        private void TabCheck(Bitmap image)
         {
-            w = bitmap.Width;
-            h = bitmap.Height;
+            int x = image.Width;
+            int y = image.Height;
+            if (tabpx == null)
+            {
+                w = x;
+                h = y;
+                tabpx = new int[w, h];
+            }
+            else if (tabpx.GetLength(1) != x || tabpx.GetLength(2) != y)
+            {
+                w = x;
+                h = y;
+                tabpx = null;
+                tabpx = new int[w, h];
+            }
+        }
+
+        public void BitmapToIntArray(Bitmap image)
+        {
+           
+            TabCheck(image);
             for (int x = 0; x < w; x++)
             {
                 for (int y = 0; y < h; y++)
+                {
+                    Color pixelColor = image.GetPixel(x, y);
+                    tabpx[x, y] = pixelColor.R;
+                }
+            }
+        }
+        public void BitmapMaxMin(Bitmap bitmap)
+        {
+            int w2 = bitmap.Width;
+            int h2 = bitmap.Height;
+            for (int x = 0; x < w2; x++)
+            {
+                for (int y = 0; y < h2; y++)
                 {
                     Color pixelColor = bitmap.GetPixel(x, y);
                     if (pixelColor.R > maxpxR)

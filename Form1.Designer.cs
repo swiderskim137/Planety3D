@@ -39,6 +39,7 @@
             button2 = new Button();
             textBox_test = new TextBox();
             wlasciwosci = new Button();
+            buttonTest = new Button();
             ((System.ComponentModel.ISupportInitialize)mapa_box).BeginInit();
             SuspendLayout();
             // 
@@ -113,27 +114,27 @@
             // 
             // button1
             // 
-            button1.Location = new Point(17, 460);
+            button1.Location = new Point(152, 460);
             button1.Name = "button1";
             button1.Size = new Size(116, 35);
             button1.TabIndex = 7;
-            button1.Text = "button1";
+            button1.Text = "wczytaj do tablicy";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // button2
             // 
-            button2.Location = new Point(157, 460);
+            button2.Location = new Point(17, 460);
             button2.Name = "button2";
-            button2.Size = new Size(85, 35);
+            button2.Size = new Size(116, 35);
             button2.TabIndex = 8;
-            button2.Text = "button2";
+            button2.Text = "czyść obraz";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
             // textBox_test
             // 
-            textBox_test.Location = new Point(17, 514);
+            textBox_test.Location = new Point(17, 554);
             textBox_test.Multiline = true;
             textBox_test.Name = "textBox_test";
             textBox_test.Size = new Size(432, 81);
@@ -149,11 +150,22 @@
             wlasciwosci.UseVisualStyleBackColor = true;
             wlasciwosci.Click += wlasciwosci_Click;
             // 
+            // buttonTest
+            // 
+            buttonTest.Location = new Point(494, 554);
+            buttonTest.Name = "buttonTest";
+            buttonTest.Size = new Size(154, 81);
+            buttonTest.TabIndex = 11;
+            buttonTest.Text = "test";
+            buttonTest.UseVisualStyleBackColor = true;
+            buttonTest.Click += buttonTest_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(984, 661);
+            Controls.Add(buttonTest);
             Controls.Add(wlasciwosci);
             Controls.Add(textBox_test);
             Controls.Add(button2);
@@ -185,5 +197,6 @@
         private Button button2;
         private TextBox textBox_test;
         private Button wlasciwosci;
+        private Button buttonTest;
     }
 }

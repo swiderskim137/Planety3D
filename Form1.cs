@@ -53,7 +53,7 @@ namespace Planety3D
 
                 mapa_box.Image = bmap;
 
-                
+
                 //mapa.Save("image.jpg", ImageFormat.Jpeg);
             }
 
@@ -96,11 +96,13 @@ namespace Planety3D
         private void button1_Click(object sender, EventArgs e)
         {
             //mapa_box.Image = bmap;
+            mapa.BitmapToIntArray(bmap);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             mapa_box.Image = null;
+            bmap = null;
         }
 
         private void wlasciwosci_Click(object sender, EventArgs e)
@@ -125,6 +127,16 @@ namespace Planety3D
             label_wysokosc.Text = "Wysokoœæ:      " + mapa.h;
             label_bit.Text = "g³êbia bitowa: " + Bitmap.GetPixelFormatSize(bmap.PixelFormat);
             label_bitpx.Text = "";
+        }
+
+        private void buttonTest_Click(object sender, EventArgs e)
+        {
+            string test = "";
+            for (int i = 0; i< 10; i++)
+            {
+                test += mapa.tabpx[i, i].ToString() + " ";
+            }
+            textBox_test.Text = test;
         }
     }
 }
